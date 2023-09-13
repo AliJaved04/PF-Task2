@@ -1,0 +1,42 @@
+.Form
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    min-height: 100vh;
+    background-color: whitesmoke;
+}
+
+
+input
+{
+    min-width: 450px;
+}
+
+.passwordContainer
+{
+    position: relative;
+}
+
+.mb-3
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.passwordToggle {
+    position: absolute;
+    top: 74%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+@media screen and (max-width:400px) {
+    input{
+     min-width: 300px;
+    }
+}
