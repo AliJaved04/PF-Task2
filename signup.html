@@ -10,7 +10,9 @@
 <body>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js" integrity="sha512-dQIiHSl2hr3NWKKLycPndtpbh5iaHLo6MwrXm7F0FM5e+kL2U16oE9uIwPHUl6fQBeCthiEuV/rzP3MiAB8Vfw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="app.js"></script>
+
         <form class="Form">
             <h1 style="margin-bottom: 30px;">SignUp Form</h1>
 
@@ -39,19 +41,22 @@
                 <label  class="form-label">Phone</label>
                 <input type="number" id="phone" class="form-control" >
               </div> 
-              <div class="mb-3">
-                <label  class="form-label">Upload Image</label>
+              <div class="mb-3" id="uploadSection">
+                <label  class="form-label" >Upload Image</label>
                 <input type="file" id="uploadImage" accept="image/*" class="form-control" >
-              </div> 
-              <!-- <div class="mb-3">
-                <label  class="form-label">Live Image</label>
-                <input type="camera" class="form-control" >
-              </div>  -->
-            <button type="submit" class="btn btn-primary" onclick="signUpSubmit(event)">Signup</button>
+             </div>
+                <div id="imageSection" class="mb-3" >
+                    <video class="form-control" style="margin-top: 30px;" id="camera" autoplay></video>
+                    <button id="captureButton" class="btn btn-primary" onclick="captureImage(event)">Capture Image</button>
+                    <input type="file" id="capturedImage" accept="image/*" style="display: none;" >
+                </div>
+                <h4 id="message">Image is uploaded</h4>
+            <button type="submit" class="btn btn-primary" onclick="signUpSubmit(event)" style="margin-top: 20px;" >Signup</button>
 
             <label  class="form-label" style="margin-top:30px;">Already have an account? <a  href="/login.html" style="margin-left: 20px;" class="btn btn-primary">Login</a></label>
 
           </form>
-
+         
+     
 </body>
 </html>

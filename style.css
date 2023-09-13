@@ -9,10 +9,28 @@
     background-color: whitesmoke;
 }
 
+#camera-container {
+    width: 100%;
+    text-align: center;
+}
+#camera {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+#capture-button {
+    margin-top: 10px;
+    cursor: pointer;}
+
 
 input
 {
     min-width: 450px;
+}
+
+#message
+{
+    display: none;
 }
 
 .passwordContainer
