@@ -28,6 +28,11 @@ input
     min-width: 450px;
 }
 
+#validateMsg
+{
+    display: none;
+}
+
 #message
 {
     display: none;

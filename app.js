@@ -39,8 +39,17 @@ function passwordVisibility()
 function loginSubmit(event)
 {
 
+event.preventDefault();
    const email= document.getElementById('email');
    const password= document.getElementById("password");
+   if(email.value.length<1 || password.value.length<1)
+   {
+            document.getElementById("validateMsg").style.display = "block";
+   }
+   else
+   {
+    document.getElementById("validateMsg").style.display = "none";
+   }
    loginData.email = email.value;
    loginData.password = password.value;
 
@@ -61,6 +70,16 @@ navigator.mediaDevices
 function signUpSubmit(event)
 {
     event.preventDefault();
+    const email= document.getElementById('email');
+   const password= document.getElementById("password");
+   if(email.value.length<1 ||address.value.length<1||phone.value.length<1||password.value.length<1||firstName.value.length<1||lastName.value.length<1)
+   {
+            document.getElementById("validateMsg").style.display = "block";
+   }
+   else
+   {
+    document.getElementById("validateMsg").style.display = "none";
+   }
    signUpData.email = document.getElementById('email').value;
    signUpData.firstName = document.getElementById('firstName').value;
    signUpData.lastName= document.getElementById('lastName').value;
@@ -73,15 +92,33 @@ function signUpSubmit(event)
    localStorage.setItem('signUpData' , JSON.stringify(signUpData));
     
 }
+
+function activateWebCam()
+{
     navigator.mediaDevices
-        .getUserMedia({ video: true })
-        .then(function (stream) {
-            const camera = document.getElementById("camera");
-            camera.srcObject = stream;
-        })
-        .catch(function (error) {
-            console.error("Error accessing the camera: " + error);
-        });
+    .getUserMedia({ video: true })
+    .then(function (stream) {
+        const camera = document.getElementById("camera");
+        camera.srcObject = stream;
+    })
+    .catch(function (error) {
+        console.error("Error accessing the camera: " + error);
+    });
+}
+  function deactivateWebCam()
+{
+    navigator.mediaDevices
+    .getUserMedia({ video: false })
+    .then(function (stream) {
+        const camera = document.getElementById("camera");
+        camera.srcObject = stream;
+    })
+    .catch(function (error) {
+        console.error("Error accessing the camera: " + error);
+    });
+}
+  
+
 
    function captureImage(event) {
     event.preventDefault();
