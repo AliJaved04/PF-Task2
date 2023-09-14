@@ -9,6 +9,20 @@
     background-color: whitesmoke;
 }
 
+
+#imageSection
+{
+    display: none;
+}
+
+
+#uploadSection
+{
+    display: none;
+}
+
+
+
 #camera-container {
     width: 100%;
     text-align: center;
